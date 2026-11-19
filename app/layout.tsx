@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Open_Sans, Roboto_Mono } from "next/font/google";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
@@ -16,7 +16,22 @@ const robotoMono = Roboto_Mono({
   variable: "--font-heading",
 });
 
+export const viewport: Viewport = {
+  themeColor: "#16110d",
+};
+
 export const metadata: Metadata = {
+  applicationName: "KUMO Technology",
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "16x16 32x32 48x48" },
+      { url: "/favicon.svg", type: "image/svg+xml", sizes: "any" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   title: "Kumo",
   description:
     "Digital solutions for real-world business challenges from KUMO Tech.",
